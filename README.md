@@ -76,7 +76,7 @@ public class Program {
 
 ## Performance
 
-The C# port does not perform as well the original Javascript version running with nodejs, and I'm not entirely sure why.  However, it does seem to run quite a bit faster than the C# alternatives that I tried out before doing the port.
+The C# port does not perform as well as the original Javascript version running with nodejs.  However, it does seem to run quite a bit faster than the C# alternatives that I tried out before doing the port.
 
 &nbsp; | uniform 100k | gauss 100k | grid 100k | degen 100k | uniform 1&nbsp;million | gauss 1&nbsp;million | grid 1&nbsp;million | degen 1&nbsp;million
 :-- | --: | --: | --: | --: | --: | --: | --: | --:
@@ -87,4 +87,4 @@ The C# port does not perform as well the original Javascript version running wit
 
 **Note:** all of these libraries typically require you to convert your point/vector data structures into corresponding data structures used by the libraries.  I believe that real-world usage will typically require those conversions, so the benchmark timings include the conversion time.
 
-Benchmarks were run on Windows 10 on an x64-based processor, Intel Core i7-4790S CPU @ 3.20GHz, 16 GB of memory.
+Benchmarks were run on Windows 10 with an x64-based processor, Intel Core i7-4790S CPU @ 3.20GHz, 16 GB of memory.
