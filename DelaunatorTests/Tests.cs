@@ -23,8 +23,8 @@ public class Tests {
             concatenated.Add(p.X);
             concatenated.Add(p.Y);
         });
-        var d1 = new Delaunator(concatenated);
-        var d2 = Delaunator.From(points, p => p.X, p => p.Y);
+        var d1 = new Delaunator.Triangulation(concatenated);
+        var d2 = Delaunator.Triangulation.From(points, p => p.X, p => p.Y);
         CollectionAssert.AreEqual(d1.triangles, d2.triangles);
     }
 
@@ -100,13 +100,13 @@ public class Tests {
     public void ThrowsOnSmallNumberOfPoints() {
         var points = LoadDefaultPoints();
         try {
-            Delaunator.From(points.GetRange(0, 1), v => v.X, v => v.Y);
+            Delaunator.Triangulation.From(points.GetRange(0, 1), v => v.X, v => v.Y);
             Assert.Fail("Should have caught");
         }
         catch (Exception) {
         }
         try {
-            Delaunator.From(points.GetRange(0, 2), v => v.X, v => v.Y);
+            Delaunator.Triangulation.From(points.GetRange(0, 2), v => v.X, v => v.Y);
             Assert.Fail("Should have caught");
         }
         catch (Exception) {
@@ -116,7 +116,7 @@ public class Tests {
     [TestMethod()]
     public void ThrowsOnAllColinearPoints() {
         try {
-            Delaunator.From(new List<Vector2>() {
+            Delaunator.Triangulation.From(new List<Vector2>() {
                 new Vector2(0, 0),
                 new Vector2(1, 0),
                 new Vector2(2, 0),
@@ -138,13 +138,13 @@ public class Tests {
             double.TryParse(s.Split(',')[1], out double result);
             return result;
         };
-        Delaunator.From(new List<string>() {
+        Delaunator.Triangulation.From(new List<string>() {
             "5,5", "7,5", "7,6"
         }, v => x(v), v => y(v));
     }
 
     private static void Validate(List<Vector2> points) {
-        var d = Delaunator.From(points, v => v.X, v => v.Y);
+        var d = Delaunator.Triangulation.From(points, v => v.X, v => v.Y);
 
         // validate halfedges
         for (int i = 0; i < d.halfedges.Count; i++) {

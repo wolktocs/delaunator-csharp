@@ -32,12 +32,12 @@ public class Program {
       98.888595339607888, 186.629392246050855,
       52.660668968140221, 63.178539267712423
     }
-    Delaunator d = new Delaunator(inputPoints);
+    Delaunator.Triangulation d = new Delaunator.Triangulation(inputPoints);
   }
 }
 ```
 
-Alternately, you can call the static `Delaunator.From()` method with a `List` of a custom objects and provide functions that extract the x- and y- coordinates.
+Alternately, you can call the static `Delaunator.Triangulation.From()` method with a `List` of a custom objects and provide functions that extract the x- and y- coordinates.
 ```
 using System;
 using System.Collections.Generic;
@@ -64,7 +64,7 @@ public class Program {
       new Vector(98.888595339607888, 186.629392246050855),
       new Vector(52.660668968140221, 63.178539267712423)
     };
-    Delaunator d = Delaunator.From(inputPoints,
+    Delaunator.Triangulation d = Delaunator.Triangulation.From(inputPoints,
       p => p.X, // extracts the x-coordinate from a Vector
       p => p.Y // extracts the y-coordinate from a Vector
     );

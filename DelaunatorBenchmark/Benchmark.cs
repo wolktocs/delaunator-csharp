@@ -61,7 +61,7 @@ public class Benchmark {
 
     public void TriangulateDelaunator(List<Vector> points, int count, bool showResult = true) {
         stopwatch.Restart();
-        Delaunator d = Delaunator.From(points, (Vector v) => { return v.x; }, (Vector v) => { return v.y; });
+        var d = Delaunator.Triangulation.From(points, (Vector v) => { return v.x; }, (Vector v) => { return v.y; });
         stopwatch.Stop();
         if (showResult) {
             WriteResult(count, stopwatch);
