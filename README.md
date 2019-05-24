@@ -1,7 +1,7 @@
 # delaunator-csharp
 A C# library for Delaunay triangulation of 2D points.  A port of [Delaunator](https://github.com/mapbox/delaunator).
 
-While looking for a library to help me with experiments in generating Delaunay triangulations and their accompanying Voronoi diagrams, I came across some excellent Javascript projects that made use of Delaunator.  I was a little unhappy with the available C# options, so I decided to do a port.
+While looking for a library to help me with experiments in generating Delaunay triangulations and their accompanying Voronoi diagrams, I came across some excellent Javascript projects that made use of Delaunator ([d3-geo-voronoi](https://github.com/Fil/d3-geo-voronoi), for example).  I was a little unhappy with the available C# options, so I decided to do a port.
 
 ## Building
 
