@@ -8,14 +8,13 @@ While looking for a library to help me with experiments in generating Delaunay t
 The solution and projects were created with Visual Studio 2019.  The projects include:
  + *Delaunator*: the library itself, builds a DLL
  + *DelaunatorBenchmarks*: a console application that runs a simple benchmark
- + *DelaunatorTests*: a unit test class that makes use of the MSTest framework
+ + *DelaunatorTests*: a unit test class that makes use of the MSTest framework.  You will need to "Load Project Dependencies" for this project to get the NuGet test framework dependencies.
  
 ## Usage
 
 The library closely follows the original implementation.  The constructor for the `Delaunator` class accepts a `List` of `double`'s where every two elements of the list are an `x` and `y` coordinate of the input point set.
 
 ```
-using Delaunator;
 using System;
 using System.Collections.Generic;
 
@@ -40,7 +39,6 @@ public class Program {
 
 Alternately, you can call the static `Delaunator.From()` method with a `List` of a custom objects and provide functions that extract the x- and y- coordinates.
 ```
-using Delaunator;
 using System;
 using System.Collections.Generic;
 
