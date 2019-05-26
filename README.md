@@ -12,7 +12,7 @@ The solution and projects were created with Visual Studio 2019.  The projects in
  
 ## Usage
 
-The library closely follows the original implementation.  The constructor for the `Delaunator` class accepts a `List` of `double`'s where every two elements of the list are an `x` and `y` coordinate of the input point set.
+The library closely follows the original implementation.  The constructor for the `Delaunator.Triangulation` class accepts a `List` of `double`'s where every two elements of the list are an x- and y- coordinate of the input point set.
 
 ```
 using System;
